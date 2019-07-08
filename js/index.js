@@ -114,5 +114,9 @@ contact[0].getElementsByTagName('p')[1].style.color = 'blue';
 contact[0].getElementsByTagName('p')[2].style.color = 'blue';
 //footer
 const footer = document.querySelectorAll("footer");
+footer[0].getElementsByTagName('button')[0].textContent = 'Change the Footer';
+function myFunction(){
+  footer[0].getElementsByTagName('p')[0].innerHTML = 'Copyright Great Idea! 2019';
+}
 footer[0].getElementsByTagName('p')[0].textContent = siteContent["footer"]["copyright"];
 footer[0].getElementsByTagName('p')[0].style.fontWeight = 'bold';
