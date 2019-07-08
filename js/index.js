@@ -96,3 +96,7 @@ contact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['c
 contact[0].getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"];
 contact[0].getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"];
 contact[0].getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"];
+
+//footer
+const footer = document.querySelectorAll("footer");
+footer[0].getElementsByTagName('p')[0].textContent = siteContent["footer"]["copyright"];
