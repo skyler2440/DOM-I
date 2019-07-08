@@ -80,6 +80,7 @@ for (let i = 0; i < aColor.length; i++){
 
 const cta = doc.querySelector('h1');
 cta.innerHTML = siteContent["cta"]['h1'];
+cta.style.color = 'red';
 
 const button = doc.querySelectorAll('.cta-text');
 button[0].getElementsByTagName('button')[0].textContent = siteContent['cta']['button'];
@@ -92,8 +93,14 @@ const mainContentP = doc.querySelectorAll('.main-content p')
 for (let i = 0; i <mainContentH4.length; i++) {
   mainContentH4[i].textContent = siteContent['main-content'][`mc-h4-${i +1}`]
 }
+for (let i = 0; i <mainContentH4.length; i++) {
+  mainContentH4[i].style.color = 'red';
+}
 for (let i = 0; i <mainContentP.length; i++) {
   mainContentP[i].textContent = siteContent['main-content'][`mc-p-${i +1}`]
+}
+for (let i = 0; i <mainContentP.length; i++) {
+  mainContentP[i].style.color = 'blue';
 }
 //contact
 const contact= document.querySelectorAll(".contact");
@@ -101,7 +108,11 @@ contact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['c
 contact[0].getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"];
 contact[0].getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"];
 contact[0].getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"];
-
+contact[0].getElementsByTagName('h4')[0].style.color = 'red';
+contact[0].getElementsByTagName('p')[0].style.color = 'blue';
+contact[0].getElementsByTagName('p')[1].style.color = 'blue';
+contact[0].getElementsByTagName('p')[2].style.color = 'blue';
 //footer
 const footer = document.querySelectorAll("footer");
 footer[0].getElementsByTagName('p')[0].textContent = siteContent["footer"]["copyright"];
+footer[0].getElementsByTagName('p')[0].style.fontWeight = 'bold';
