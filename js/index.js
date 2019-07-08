@@ -90,3 +90,9 @@ for (let i = 0; i <mainContentH4.length; i++) {
 for (let i = 0; i <mainContentP.length; i++) {
   mainContentP[i].textContent = siteContent['main-content'][`mc-p-${i +1}`]
 }
+//contact
+const contact= document.querySelectorAll(".contact");
+contact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4'];
+contact[0].getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"];
+contact[0].getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"];
+contact[0].getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"];
