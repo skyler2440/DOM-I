@@ -70,6 +70,11 @@ const createAWho = doc.createElement('a');
 createAWho.href = 'a';
 createAWho.textContent = 'Who Are We';
 headerNav.append(createAWho);
+aColor.push(createAHome);
+aColor.push(createAWho);
+for (let i = 0; i < aColor.length; i++){
+  aColor[i].style.color = "green";
+}
 
 //header
 
