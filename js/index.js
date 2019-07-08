@@ -14,17 +14,17 @@ const siteContent = {
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
-    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
-    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-1":"Features",
+    "mc-p-1": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-2":"About",
+    "mc-p-2": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
-    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
-    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-3":"Services",
+    "mc-p-3": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-4":"Product",
+    "mc-p-4": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-5":"Vision",
+    "mc-p-5": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   "contact": {
     "contact-h4" : "Contact",
@@ -78,3 +78,15 @@ cta.innerHTML = siteContent["cta"]['h1'];
 
 const button = doc.querySelectorAll('.cta-text');
 button[0].getElementsByTagName('button')[0].textContent = siteContent['cta']['button'];
+
+//main content
+const mainContentH4 = doc.querySelectorAll('.main-content h4')
+const mainContentP = doc.querySelectorAll('.main-content p')
+
+
+for (let i = 0; i <mainContentH4.length; i++) {
+  mainContentH4[i].textContent = siteContent['main-content'][`mc-h4-${i +1}`]
+}
+for (let i = 0; i <mainContentP.length; i++) {
+  mainContentP[i].textContent = siteContent['main-content'][`mc-p-${i +1}`]
+}
