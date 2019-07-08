@@ -70,3 +70,11 @@ const createAWho = doc.createElement('a');
 createAWho.href = 'a';
 createAWho.textContent = 'Who Are We';
 headerNav.append(createAWho);
+
+//header
+
+const cta = doc.querySelector('h1');
+cta.innerHTML = siteContent["cta"]['h1'];
+
+const button = doc.querySelectorAll('.cta-text');
+button[0].getElementsByTagName('button')[0].textContent = siteContent['cta']['button'];
