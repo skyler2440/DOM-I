@@ -60,3 +60,13 @@ const aColor = Array.from(doc.querySelectorAll("header nav a"));
 for (let i = 0; i <navBar.length; i++) {
   navBar[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
 }
+
+const createAHome = doc.createElement('a');
+createAHome.href = 'a';
+createAHome.textContent = 'Home';
+headerNav.prepend(createAHome);
+
+const createAWho = doc.createElement('a');
+createAWho.href = 'a';
+createAWho.textContent = 'Who Are We';
+headerNav.append(createAWho);
