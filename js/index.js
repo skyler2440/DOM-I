@@ -50,3 +50,13 @@ headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
 
 const midImg = doc.getElementById("middle-img");
 midImg.setAttribute('src', siteContent["main-content"]['middle-img-src']);
+
+//navbar
+
+const navBar = doc.querySelectorAll("a");
+const headerNav = doc.querySelector("header nav");
+const aColor = Array.from(doc.querySelectorAll("header nav a"));
+
+for (let i = 0; i <navBar.length; i++) {
+  navBar[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
+}
