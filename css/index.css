@@ -116,7 +116,7 @@ header .logo {
     margin: 0 82px 0 0;
 }
 
-.cta .cta-text button {
+button {
     border: 1px double black;
     font-size: 16px;
     background: white;
@@ -126,7 +126,7 @@ header .logo {
     cursor: pointer;
 }
 
-.cta .cta-text button:hover {
+button:hover {
     background: black;
     color: white;
 }

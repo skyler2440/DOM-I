@@ -1,4 +1,3 @@
-
 const siteContent = {
   "nav": {
     "nav-item-1": "Services",
@@ -15,17 +14,17 @@ const siteContent = {
     "img-src": "img/header-img.png"
   },
   "main-content": {
-    "features-h4":"Features",
-    "features-content": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "about-h4":"About",
-    "about-content": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-1":"Features",
+    "mc-p-1": "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-2":"About",
+    "mc-p-2": "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "middle-img-src": "img/mid-page-accent.jpg",
-    "services-h4":"Services",
-    "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "product-h4":"Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
-    "vision-h4":"Vision",
-    "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-3":"Services",
+    "mc-p-3": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-4":"Product",
+    "mc-p-4": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "mc-h4-5":"Vision",
+    "mc-p-5": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
   "contact": {
     "contact-h4" : "Contact",
@@ -38,73 +37,86 @@ const siteContent = {
   },
 };
 
-// Images
-const logo = document.getElementById("logo-img");
+// Example: Update the img src for the logo
+const doc = document;
+
+//images
+const logo = doc.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"]);
 
-const headerImg = document.getElementById("cta-img");
+const headerImg = doc.getElementById("cta-img");
 headerImg.setAttribute('src', siteContent["cta"]["img-src"]);
+// console.log(headerImg)
 
-const contentImg = document.getElementById("middle-img");
-contentImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+const midImg = doc.getElementById("middle-img");
+midImg.setAttribute('src', siteContent["main-content"]['middle-img-src']);
 
-//Nav
-const navBar = document.querySelectorAll("a");
-const headerNav = document.querySelector("header nav");
-const aColor = Array.from(document.querySelectorAll("header nav a"));
+//navbar
+
+const navBar = doc.querySelectorAll("a");
+const headerNav = doc.querySelector("header nav");
+const aColor = Array.from(doc.querySelectorAll("header nav a"));
 
 for (let i = 0; i <navBar.length; i++) {
   navBar[i].textContent = siteContent["nav"][`nav-item-${i + 1}`];
 }
 
-const home = document.createElement('a');
-home.href = '#';
-home.textContent = "Home";
-headerNav.prepend(home);
+const createAHome = doc.createElement('a');
+createAHome.href = 'a';
+createAHome.textContent = 'Home';
+headerNav.prepend(createAHome);
 
-const whoAre = document.createElement("a");
-whoAre.href = "#";
-whoAre.textContent = "Who Are We";
-headerNav.append(whoAre);
-aColor.push(home);
-aColor.push(whoAre);
+const createAWho = doc.createElement('a');
+createAWho.href = 'a';
+createAWho.textContent = 'Who Are We';
+headerNav.append(createAWho);
+aColor.push(createAHome);
+aColor.push(createAWho);
 for (let i = 0; i < aColor.length; i++){
   aColor[i].style.color = "green";
 }
 
-// aColor.push(home);
+//header
 
-//Header
-const cta = document.querySelector("h1");
-cta.innerHTML=siteContent["cta"]["h1"];
+const cta = doc.querySelector('h1');
+cta.innerHTML = siteContent["cta"]['h1'];
+cta.style.color = 'red';
 
-const button = document.querySelectorAll(".cta-text");
-button[0].getElementsByTagName("button")[0].textContent = siteContent["cta"]["button"];
+const button = doc.querySelectorAll('.cta-text');
+button[0].getElementsByTagName('button')[0].textContent = siteContent['cta']['button'];
 
-//Main Content Contact Footer
-const txtContent = document.querySelectorAll('.text-content');
-txtContent[0].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['features-h4'];
-txtContent[0].getElementsByTagName('p')[0].textContent = siteContent['main-content']['features-content'];
+//main content
+const mainContentH4 = doc.querySelectorAll('.main-content h4')
+const mainContentP = doc.querySelectorAll('.main-content p')
 
-txtContent[1].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['about-h4'];
-txtContent[1].getElementsByTagName('p')[0].textContent = siteContent['main-content']['about-content'];
 
-txtContent[2].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['services-h4'];
-txtContent[2].getElementsByTagName('p')[0].textContent = siteContent['main-content']['services-content'];
-
-txtContent[3].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['product-h4'];
-txtContent[3].getElementsByTagName('p')[0].textContent = siteContent['main-content']['product-content'];
-
-txtContent[4].getElementsByTagName('h4')[0].textContent = siteContent['main-content']['vision-h4'];
-txtContent[4].getElementsByTagName('p')[0].textContent = siteContent['main-content']['vision-content'];
-
-//Contact
+for (let i = 0; i <mainContentH4.length; i++) {
+  mainContentH4[i].textContent = siteContent['main-content'][`mc-h4-${i +1}`]
+}
+for (let i = 0; i <mainContentH4.length; i++) {
+  mainContentH4[i].style.color = 'red';
+}
+for (let i = 0; i <mainContentP.length; i++) {
+  mainContentP[i].textContent = siteContent['main-content'][`mc-p-${i +1}`]
+}
+for (let i = 0; i <mainContentP.length; i++) {
+  mainContentP[i].style.color = 'blue';
+}
+//contact
 const contact= document.querySelectorAll(".contact");
 contact[0].getElementsByTagName('h4')[0].textContent = siteContent['contact']['contact-h4'];
 contact[0].getElementsByTagName('p')[0].textContent = siteContent["contact"]["address"];
 contact[0].getElementsByTagName('p')[1].textContent = siteContent["contact"]["phone"];
 contact[0].getElementsByTagName('p')[2].textContent = siteContent["contact"]["email"];
-
-//Footer
+contact[0].getElementsByTagName('h4')[0].style.color = 'red';
+contact[0].getElementsByTagName('p')[0].style.color = 'blue';
+contact[0].getElementsByTagName('p')[1].style.color = 'blue';
+contact[0].getElementsByTagName('p')[2].style.color = 'blue';
+//footer
 const footer = document.querySelectorAll("footer");
+footer[0].getElementsByTagName('button')[0].textContent = 'Change the Footer';
+function myFunction(){
+  footer[0].getElementsByTagName('p')[0].innerHTML = 'Copyright Great Idea! 2019';
+}
 footer[0].getElementsByTagName('p')[0].textContent = siteContent["footer"]["copyright"];
+footer[0].getElementsByTagName('p')[0].style.fontWeight = 'bold';
